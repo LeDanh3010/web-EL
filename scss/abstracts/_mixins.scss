@@ -1,0 +1,37 @@
+//mixin flex
+@mixin flex($justify: null, $align: null) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+//mixin font
+@mixin font($size: null, $weight: null) {
+  font-size: $size;
+  font-weight: $weight;
+}
+//mixin size
+@mixin size($minW: null, $width: null, $minH: null, $height: null) {
+  min-width: $minW;
+  width: $width;
+  height: $height;
+  min-height: $minH;
+}
+//mixin sizes square
+@mixin squareSize($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+//mixin position
+@mixin position(
+  $position: null,
+  $top: null,
+  $left: null,
+  $bottom: null,
+  $right: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

@@ -1,0 +1,135 @@
+/*******Login******/
+@use "../abstracts";
+.login-page {
+  padding: 5rem 0;
+}
+.login-wrapper {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.login-row {
+  display: flex;
+  justify-content: center;
+}
+.login-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-image: url("/assets/imgs/Login/login.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 626px;
+  padding: 11.5rem 0;
+  color: abstracts.$primary-color;
+  border-radius: 15px;
+  min-height: 600px;
+}
+.login-title {
+  @include abstracts.font(4rem, 700);
+  text-transform: uppercase;
+  line-height: 3.2rem;
+}
+.login-intro {
+  @include abstracts.font(1.8rem, 500);
+  margin: 3rem auto 4.5rem;
+  width: 95%;
+  span {
+    font-style: italic;
+    color: #131313;
+  }
+}
+
+.login-link--white {
+  margin-left: 0.3rem;
+  color: #fff;
+}
+
+.login-form {
+  width: 80%;
+  margin: 0 auto;
+}
+.login-form-username,
+.login-form-password {
+  display: flex;
+  flex-wrap: wrap;
+  @include abstracts.font(1.8rem, 500);
+}
+.login-form-username + .login-form-password {
+  margin-top: 2.5rem;
+}
+.login-form--title {
+  text-align: left;
+}
+.login-form-input {
+  height: 45px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  margin-top: 8px;
+  padding: 1rem 2rem;
+  color: #444141;
+}
+
+.login-form-submit {
+  @include abstracts.font(1.8rem, 500);
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.login-form-btn {
+  @include abstracts.font(1.8rem, 500);
+  background: abstracts.$primary-color;
+  color: #fff;
+  border-radius: 10px;
+  padding: 1rem 5rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+.login-form-btn:hover,
+.login-form-btn:focus {
+  opacity: 0.95;
+}
+.login-withSocial {
+  @include abstracts.font(1.8rem, 500);
+  margin-top: 50px;
+
+  a {
+    color: abstracts.$primary-color;
+  }
+}
+.login-withSocial-item + .login-withSocial-item {
+  margin-left: 10px;
+}
+/*********media query ***********/
+@media (min-width: 768px) {
+  .login-content {
+    min-height: 1024px;
+  }
+
+  .login-form-username,
+  .login-form-password {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .login-form-input {
+    margin-top: 0;
+    max-width: 379px;
+  }
+  .login-form-submit {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .login-form-btn {
+    padding: 1rem 3rem;
+    margin-left: 45px;
+    margin-top: 0;
+  }
+  .login-withSocial {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

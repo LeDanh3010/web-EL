@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../assets/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="site" class="main">
+      <header class="main-header">
+        <div class="header-top">
+          <div class="header-top-container container">
+            <div class="header-top-contact row g-2">
+              <div class="hotline">
+                <a href="tel:+0368861607">
+                  <i class="fa-solid fa-phone"></i>
+                  <span>Hotline: 0368861607</span>
+                </a>
+              </div>
+              <div class="email">
+                <a href="mailto:hoctienganhkhongquau@gmail.com">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>E-mail: hoctienganhkhongquau@gmail.com</span>
+                </a>
+              </div>
+            </div>
+            <div class="header-top-users row g-2">
+              <div class="login">
+                <a href="./pages/login.html">
+                  <i class="fa-regular fa-user"></i>
+                  <span>Log In</span>
+                </a>
+              </div>
+              <div class="signUp">
+                <a href="#">
+                  <i class="fa-solid fa-user"></i>
+                  <span>Sign Up</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header-bottom">
+          <ul class="header-bottom-container container">
+            <li class="header-bottom-left row g-2">
+              <a href="../index.html">
+                <img src="../assets/imgs/brand.png" alt="img" />
+              </a>
+              <div class="search-bar">
+                <input
+                  type="text"
+                  name="Search"
+                  id="Search"
+                  placeholder="Search..."
+                />
+                <span class="search-icon">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+              </div>
+            </li>
+            <li class="header-bottom-right row g-2">
+              <span class="header-bottom-right__exam">
+                <a href="#">Let's try</a>
+              </span>
+              <span class="header-bottom-right__cart">
+                <a href="#" aria-label="brand">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+              </span>
+              <span
+                class="header-bottom-right__menu-show header-bottom-right__menu-show--has-notify"
+              >
+                <div class="menu-show__icon">
+                  <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="menu-show__lists">
+                  <div class="menu-show__lists-border"></div>
+                  <ul class="menu-show__lists-items">
+                    <li class="menu-show__lists-item">
+                      <a href="">Account</a>
+                    </li>
+                    <li class="menu-show__lists-item">
+                      <a href="">FlashCard</a>
+                    </li>
+                    <li class="menu-show__lists-item">
+                      <a href="">Courses</a>
+                    </li>
+                    <li class="menu-show__lists-item">
+                      <a href="">My Course</a>
+                    </li>
+                    <li class="menu-show__lists-item">
+                      <a href="">Profile</a>
+                    </li>
+                  </ul>
+                </div>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <section class="login-page">
+        <div class="login-wrapper login-row">
+          <div class="login-content">
+            <h2 class="login-title">Sign In</h2>
+            <p class="login-intro">
+              <span>Don't have account?</span
+              ><a href="#" class="links login-link--white">Sign Up</a>
+            </p>
+            <form class="login-form" action="" method="post">
+              <div class="login-form-username">
+                <label class="login-form--title" for="username"
+                  >Username:</label
+                >
+                <input
+                  class="login-form-input"
+                  type="text"
+                  id="username"
+                  name="username-login"
+                />
+              </div>
+              <div class="login-form-password">
+                <label class="login-form--title" for="password"
+                  >Password:</label
+                >
+                <input
+                  class="login-form-input"
+                  type="password"
+                  id="password"
+                  name="password-login"
+                />
+              </div>
+              <div class="login-form-submit">
+                <a class="links" href="#">Forgot your password?</a>
+                <button class="login-form-btn" type="submit">Sign In</button>
+              </div>
+              <div class="login-withSocial">
+                <span class="login-withSocial-text login-withSocial-item"
+                  >Or log in with</span
+                >
+                <a class="login-withSocial-item" href="#" aria-label="link"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+                <a class="login-withSocial-item" href="#" aria-label="link"
+                  ><i class="fa-solid fa-envelope"></i
+                ></a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <footer class="footer-main">
+        <div class="footer-content container">
+          <div class="wrapper row">
+            <ul class="footer-info footer-info--primary col-md-6 col-12">
+              <li class="info-item">
+                <i class="fa-solid fa-map"></i>
+                <span class="footer--blank">231,New Jersey,Los Angeles</span>
+              </li>
+              <li class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <span class="footer--blank">Hotline:</span>
+                <a href="tel:+0368861607">0368861607</a>
+              </li>
+              <li class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="footer--blank">Email:englishIsEasy@gmail.com</span>
+              </li>
+              <li class="info-item info-item--copyright">
+                <span
+                  >Copyright:Learn English Was Easy Belong To Learn English Was
+                  Easy
+                </span>
+              </li>
+              <li class="info-item">
+                <span>Connect with us</span>
+                <a href="#" aria-label="contact facebook"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+              </li>
+            </ul>
+            <ul class="footer-info footer-info--secondary col-md-6 col-12">
+              <li class="info-item"><a href="#">Account</a></li>
+              <li class="info-item"><a href="#">FlashCard</a></li>
+              <li class="info-item"><a href="#">Courses</a></li>
+              <li class="info-item"><a href="#">My Course</a></li>
+              <li class="info-item"><a href="#">Profile</a></li>
+              <li class="info-item info-item--white">
+                2022 English is easy.All Rights Reserved
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="../js/sticky-effect.js"></script>
+  </body>
+</html>

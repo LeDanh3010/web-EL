@@ -1,0 +1,120 @@
+/**************************************************/
+/*grid system library*/
+@use "sass:math";
+@use "../abstracts";
+.container-fluid {
+  --gutter-x: #{abstracts.$grid-gutter-width};
+  --gutter-y: 20;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @extend %gutter-padding;
+}
+.container {
+  @extend .container-fluid;
+}
+%gutter-padding {
+  padding-left: calc(var(--gutter-x) * 0.5);
+  padding-right: calc(var(--gutter-x) * 0.5);
+}
+/* with row */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--gutter-y) * -1);
+  margin-left: calc(var(--gutter-x) * 0.5 * -1);
+  margin-right: calc(var(--gutter-x) * 0.5 * -1);
+
+  > * {
+    margin-top: var(--gutter-y);
+    @extend %gutter-padding;
+  }
+}
+
+/* with col */
+.col {
+  flex: 1 0;
+}
+
+/*gutter 0*/
+.gutter-0 {
+  --spacer: 0;
+}
+
+// media query
+@mixin media-query($dimension, $byPass: false) {
+  @if $byPass {
+    @content;
+  } @else {
+    @media (min-width: $dimension) {
+      @content;
+    }
+  }
+}
+//mixin loop for  row-columns
+@mixin make-row-columns($infix) {
+  //affect with a row
+  @for $i from 1 through abstracts.$grid-column * 0.5 {
+    .row.row-cols#{$infix}-#{$i} > * {
+      flex: 0 0 auto;
+      width: math.div(100%, $i);
+    }
+  }
+}
+// mixin offset
+@mixin make-offsets($infix) {
+  // for offset
+  @for $i from 0 to abstracts.$grid-column {
+    .row > .offset#{$infix}-#{$i} {
+      margin-left: if($i > 0, math.div(100%, abstracts.$grid-column) * $i, 0);
+    }
+  }
+}
+//mixin loop for items columns
+@mixin make-columns($infix) {
+  @for $i from 0 through abstracts.$grid-column {
+    @if ($i == 0) {
+      .row > .col#{$infix}-#{$i} {
+        display: none;
+      }
+    } @else {
+      .row > .col#{$infix}-#{$i} {
+        flex: 0 0 auto;
+        width: math.div(100%, abstracts.$grid-column) * $i;
+      }
+    }
+  }
+}
+//mixin gutter
+@mixin make-gutters($infix) {
+  @each $i, $ratio in abstracts.$gutters {
+    .g#{$infix}-#{$i},
+    .gx#{$infix}-#{$i} {
+      --gutter-x: #{abstracts.$grid-gutter-width * $ratio};
+    }
+    .g#{$infix}-#{$i},
+    .gy#{$infix}-#{$i} {
+      --gutter-y: #{abstracts.$grid-gutter-width * $ratio};
+    }
+  }
+}
+//loop for media query
+@each $breakpoint, $dimension in abstracts.$grid-breakpoints {
+  $max-widths: map-get(abstracts.$container-max-widths, $breakpoint);
+  $breakpoint-xs: $breakpoint == xs;
+  $infix: if($breakpoint-xs, "", "-#{$breakpoint}");
+  /* media query */
+  @include media-query($dimension, $breakpoint-xs) {
+    .container {
+      max-width: $max-widths;
+    }
+    /*affect with a row*/
+    @include make-row-columns($infix);
+    /*affect each column*/
+    @include make-columns($infix);
+    /*affect offset*/
+    @include make-offsets($infix);
+    /*gutter*/
+    @include make-gutters($infix);
+  }
+}

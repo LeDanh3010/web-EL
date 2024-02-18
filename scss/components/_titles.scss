@@ -1,0 +1,26 @@
+/******* title component *********/
+@use "../abstracts";
+.title-component {
+  position: relative;
+  padding-top: 50px;
+  @include abstracts.font(4rem, bold);
+  color: abstracts.$secondary-color;
+  text-align: center;
+  padding-bottom: 28px;
+  &::after {
+    content: "";
+    @include abstracts.position(absolute, $left: 50%, $bottom: 0);
+    @include abstracts.size($width: 145px, $height: 4px);
+    background-color: abstracts.$secondary-color;
+    transform: translateX(-50%);
+  }
+}
+
+.title-detail {
+  @include abstracts.font(1.8rem, 500);
+  text-align: center;
+  margin: 35px 0;
+  & > p {
+    line-height: 3rem;
+  }
+}

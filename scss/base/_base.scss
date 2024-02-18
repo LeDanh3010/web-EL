@@ -1,0 +1,25 @@
+/*base scss*/
+@use "../abstracts";
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: abstracts.$text-primary !important;
+}
+a {
+  text-decoration: none;
+}
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}

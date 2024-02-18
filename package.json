@@ -1,0 +1,13 @@
+{
+  "name": "tieng-anh-khong-quau",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass scss/main.scss assets/main.css -w",
+    "minify": "sass scss/main.scss assets/main.css -s compressed"
+  },
+  "author": "",
+  "license": "ISC"
+}

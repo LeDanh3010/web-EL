@@ -1,0 +1,61 @@
+@use "../abstracts";
+/*****************home slide*****************************/
+@for $i from 1 through 3 {
+  .home-slide {
+    .slide-container__img:nth-child(#{$i}) {
+      background: url("/assets/imgs/slider/slider#{$i}.jpg")
+        top
+        center /
+        cover
+        no-repeat;
+    }
+  }
+}
+.slide-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 50%;
+  &__img {
+    @include abstracts.position(absolute, 0, 0);
+    @include abstracts.squareSize(100%);
+    animation: fadeInOut ease-in-out 2s;
+  }
+}
+.slide-button {
+  @include abstracts.position(absolute, 50%);
+  @include abstracts.flex(space-between);
+  z-index: 3;
+  font-size: 4rem;
+  width: 100%;
+  transform: translateY(-50%);
+  padding: 0 80px;
+  & > a {
+    @include abstracts.squareSize(80px);
+    @include abstracts.flex(center, center);
+    border-radius: 50%;
+    color: rgb(255, 255, 255, 0.5);
+    visibility: hidden;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    transition: visibility 5s ease-in-out 0.5s;
+    cursor: pointer;
+  }
+}
+.slide-button:hover a {
+  visibility: visible;
+}
+//keyframe
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+//media
+@media (max-width: 991px) {
+  .slide-button {
+    display: none;
+  }
+}

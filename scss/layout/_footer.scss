@@ -1,0 +1,39 @@
+/**********footer*************/
+@use "../abstracts";
+.footer-main {
+  background: abstracts.$secondary-color;
+  font-size: 1.3rem;
+  padding: 5rem 0;
+  color: abstracts.$primary-color;
+}
+.footer-info--secondary {
+  display: none;
+}
+.info-item + .info-item:not(.info-item--copyright) {
+  margin-top: 1rem;
+}
+.info-item--copyright {
+  margin: 2.5rem 0;
+}
+i + .footer--blank {
+  margin-left: 0.5rem;
+}
+//media query for desktop
+@media (min-width: 768px) {
+  .footer-info--secondary {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .footer-info--secondary {
+    text-align: right;
+    a {
+      color: abstracts.$primary-color;
+    }
+  }
+  .info-item--white {
+    color: #fff;
+    @include abstracts.position(absolute, $bottom: 0, $right: 0);
+    margin-right: 15px;
+  }
+}
